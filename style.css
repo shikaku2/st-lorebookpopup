@@ -1,0 +1,174 @@
+/* ── Modal ──────────────────────────────────────────────────────────────── */
+.lbpopup-modal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 100%;
+}
+
+.lbpopup-modal-header {
+    font-size: 0.85em;
+    opacity: 0.6;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, rgba(255 255 255 / 0.1));
+}
+
+.lbpopup-modal-entry {
+    background: var(--SmartThemeBlurTintColor, rgba(255 255 255 / 0.04));
+    border: 1px solid var(--SmartThemeBorderColor, rgba(255 255 255 / 0.1));
+    border-radius: 5px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lbpopup-modal-entry-content {
+    font-size: 0.875em;
+    line-height: 1.55;
+    border-left: 3px solid var(--SmartThemeQuoteColor, #7b68ee);
+    border-radius: 0 3px 3px 0;
+    padding: 6px 10px;
+    background: var(--SmartThemeBlurTintColor, rgba(0 0 0 / 0.15));
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ── Log section label ──────────────────────────────────────────────────── */
+.lbpopup-log-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85em;
+    opacity: 0.6;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.lbpopup-view-latest-btn {
+    margin-left: auto;
+    font-size: 0.9em;
+    padding: 2px 8px;
+    opacity: 1;
+}
+
+/* ── Log container ──────────────────────────────────────────────────────── */
+.lbpopup-log {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 340px;
+    overflow-y: auto;
+    padding-right: 2px;
+}
+
+/* ── Empty state ────────────────────────────────────────────────────────── */
+.lbpopup-empty {
+    font-size: 0.875em;
+    opacity: 0.5;
+    font-style: italic;
+    padding: 6px 0;
+}
+
+/* ── Activation group ───────────────────────────────────────────────────── */
+.lbpopup-activation {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border-top: 1px solid var(--SmartThemeBorderColor, rgba(255 255 255 / 0.1));
+    padding-top: 6px;
+    margin-top: 2px;
+}
+
+.lbpopup-activation:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.lbpopup-activation-header {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 0.8em;
+    opacity: 0.6;
+    margin-bottom: 2px;
+}
+
+.lbpopup-activation-label {
+    font-weight: 600;
+    opacity: 1;
+}
+
+.lbpopup-activation-count {
+    flex: 1;
+}
+
+.lbpopup-activation-time {
+    white-space: nowrap;
+}
+
+.lbpopup-view-btn {
+    margin-left: auto;
+    font-size: 0.8em;
+    padding: 1px 7px;
+}
+
+/* ── Individual entry card ──────────────────────────────────────────────── */
+.lbpopup-entry {
+    background: var(--SmartThemeBlurTintColor, rgba(255 255 255 / 0.04));
+    border: 1px solid var(--SmartThemeBorderColor, rgba(255 255 255 / 0.1));
+    border-radius: 5px;
+    padding: 7px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ── Entry header row ───────────────────────────────────────────────────── */
+.lbpopup-entry-header {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+}
+
+.lbpopup-entry-num {
+    font-size: 0.8em;
+    opacity: 0.4;
+    min-width: 1.2em;
+    text-align: right;
+}
+
+.lbpopup-entry-title {
+    font-weight: 600;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lbpopup-entry-book {
+    font-size: 0.8em;
+    opacity: 0.55;
+    white-space: nowrap;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Content preview ────────────────────────────────────────────────────── */
+.lbpopup-entry-preview {
+    font-size: 0.825em;
+    opacity: 0.75;
+    border-left: 3px solid var(--SmartThemeQuoteColor, #7b68ee);
+    border-radius: 0 3px 3px 0;
+    padding: 4px 8px;
+    background: var(--SmartThemeBlurTintColor, rgba(0 0 0 / 0.12));
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.45;
+}
