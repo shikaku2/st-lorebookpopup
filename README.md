@@ -6,7 +6,7 @@ A [SillyTavern](https://github.com/SillyTavern/SillyTavern) extension that shows
 
 1. In SillyTavern, open **Extensions → Install extension**
 2. Paste this URL ```bash
-# https://github.com/shikaku2/st-lorebookpopup
+https://github.com/shikaku2/st-lorebookpopup
 ```
 
 ## Features
