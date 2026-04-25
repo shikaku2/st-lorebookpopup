@@ -2,6 +2,13 @@
 
 A [SillyTavern](https://github.com/SillyTavern/SillyTavern) extension that shows a toast notification whenever lorebook entries are injected into the prompt, with a full log and modal viewer.
 
+## Quick Install:
+
+1. In SillyTavern, open **Extensions → Install extension**
+2. Paste this URL ```bash
+# https://github.com/shikaku2/st-lorebookpopup
+```
+
 ## Features
 
 - **Toast notification** — fires on each generation where one or more lorebook entries are active, showing the count: `Lorebook Entries Inserted: N`
