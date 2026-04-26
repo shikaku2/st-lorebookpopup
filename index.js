@@ -7,7 +7,7 @@ const EXT_NAME = 'lorebookpopup';
 const MAX_ACTIVATIONS = 10;
 const PREVIEW_LEN = 120;
 
-const defaultSettings = { enabled: true, logging: true, clickable: true };
+const defaultSettings = { enabled: true, logging: true, clickable: true, filterConstant: true };
 
 // Ring buffer of last MAX_ACTIVATIONS activations, newest first.
 // Each: { time: Date, entries: [{world, title, content}] }
@@ -61,11 +61,19 @@ function showActivationModal(activation) {
     }).show();
 }
 
+function isAlwaysOnOnly(e) {
+    // constant=true, vectorized=false/unset → purely always-on, no dynamic selection
+    return e.constant === true && !e.vectorized;
+}
+
 function onWorldInfoActivated(entries) {
     const s = extension_settings[EXT_NAME];
     if (!s.enabled || !entries?.length) return;
 
-    const activation = { time: new Date(), entries: entries.map(mapEntry) };
+    const visible = s.filterConstant ? entries.filter(e => !isAlwaysOnOnly(e)) : entries;
+    if (!visible.length) return;
+
+    const activation = { time: new Date(), entries: visible.map(mapEntry) };
 
     const toastrOpts = { positionClass: 'toast-bottom-right' };
     if (s.clickable) {
@@ -76,7 +84,7 @@ function onWorldInfoActivated(entries) {
     }
 
     toastr.info(
-        `Lorebook Entries Inserted: ${entries.length}`,
+        `Lorebook Entries Inserted: ${visible.length}`,
         s.clickable ? 'Click to view' : '',
         toastrOpts,
     );
@@ -155,6 +163,10 @@ function initUI() {
                 <input id="lbpopup-logging" type="checkbox" />
                 <span>Log inserted entries</span>
             </label>
+            <label class="checkbox_label">
+                <input id="lbpopup-filter-constant" type="checkbox" />
+                <span>Hide always-on entries (show vectorized ones)</span>
+            </label>
             <div class="lbpopup-log-label">
                 <span>Last ${MAX_ACTIVATIONS} insertions</span>
                 <button id="lbpopup-view-latest" class="menu_button lbpopup-view-latest-btn">View Latest</button>
@@ -182,6 +194,11 @@ function initUI() {
 
     $('#lbpopup-logging').prop('checked', s.logging).on('change', function () {
         extension_settings[EXT_NAME].logging = !!$(this).prop('checked');
+        saveSettingsDebounced();
+    });
+
+    $('#lbpopup-filter-constant').prop('checked', s.filterConstant).on('change', function () {
+        extension_settings[EXT_NAME].filterConstant = !!$(this).prop('checked');
         saveSettingsDebounced();
     });
 
