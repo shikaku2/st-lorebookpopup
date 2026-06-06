@@ -13,7 +13,7 @@ A [SillyTavern](https://github.com/SillyTavern/SillyTavern) extension that shows
 - **Click-to-view** — clicking the toast opens a modal with the full text of every injected entry (optional, on by default)
 - **Activation log** — keeps a rolling history of the last 10 generations that triggered lorebook entries, each showing entry titles, source book, and a content preview
 - **Modal viewer** — view the complete injected text for any logged activation, accessible from the toast, per-row View buttons, or the View Latest button in the settings panel
-- **Qdrant Memory integration** — when the [st-qdrant-memory](https://github.com/shikaku2/st-qdrant-memory) extension is installed, the click-through modal also shows which memories were retrieved that generation, and the settings panel gains a rolling Qdrant retrieval log (enabled by default)
+- **Qdrant Memory integration** — when the [st-qdrant-memory](https://github.com/HO-git/st-qdrant-memory) extension is installed, the click-through modal also shows which memories were retrieved that generation, and the settings panel gains a rolling Qdrant retrieval log (enabled by default)
 
 ## Installation
 

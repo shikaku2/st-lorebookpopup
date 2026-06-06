@@ -1,7 +1,8 @@
 {
     "display_name": "Lorebook Popup",
     "version": "1.1.0",
-    "author": "aaron",
+    "author": "Shikaku",
+    "homePage": "https://kung.pw/stextensions/",   
     "js": "index.js",
     "css": "style.css",
     "loading_order": 10,
